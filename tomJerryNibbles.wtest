@@ -68,7 +68,7 @@ si corre 38 metros su velocidad pasa a ser 24 (su energia es 190)
   test "statsIniciales" {
     assert.equals(10, tom.velocidadMaxima())
     assert.equals(50, tom.energia())
-  }
+  }    
 
     test "comerALarry" {
     tom.comerA(larry)
@@ -102,7 +102,29 @@ si corre 38 metros su velocidad pasa a ser 24 (su energia es 190)
     }
  
     test "puedeCazarAJerry" {
-    (tom.cazarA_A_metros(jerry, 40))
+    (tom.cazarA_A_(jerry, 40))
     assert.equals(tom.energia() + 52, tom.energia())
     }
+
+
+    test "prueba2"{
+
+      assert.equals(10, tom.velocidadMaxima())
+      assert.equals(50, tom.energia())
+
+      tom.comerA(larry)
+      assert.equals(13.7, tom.velocidadMaxima())
+      assert.equals(87, tom.energia())
+
+      tom.correr(10)
+      assert.equals(13.2, tom.velocidadMaxima())
+      assert.equals(82, tom.energia())
+
+    tom.comerA(nibbles)
+    assert.equals(18.7, tom.velocidadMaxima())
+    assert.equals(137, tom.energia())
+
+    }
+
 }
+
