@@ -50,4 +50,59 @@ si corre 38 metros su velocidad pasa a ser 24 (su energia es 190)
     assert.equals(190, tom.energia())
     
   }
+
+
+
+  /*
+  - casoDePrueba2
+  
+  . Al inicio, la velocidad máxima de Tom es 10 (su energía es 50)
+. Si come a Larry, la velocidad máxima pasa a ser 13.7 (su energía es 87)
+. Si corre 10 metros, entonces su velocidad máxima pasa a ser 13,2 (su energía es 82)
+. Si come a Nibbles, pasa a tener de velocidad máxima 17.9 (su energía es 129)
+. si larry cumple años (6 años de edad), y luego Tom lo vuelve a comer, pasaría a tener 22.6 (su energia es 176)
+. si corre 18 metros su velocidad pasa a ser 21.7 (su energia es 167)
+. tom puede cazar a jerry si la energia necesaria es menor a su energia
+  */
+
+  test "statsIniciales" {
+    assert.equals(10, tom.velocidadMaxima())
+    assert.equals(50, tom.energia())
+  }
+
+    test "comerALarry" {
+    tom.comerA(larry)
+    assert.equals(13.7, tom.velocidadMaxima())
+    assert.equals(87, tom.energia())
+    }
+    
+    test "correr10metros" {
+    tom.correr(10)
+    assert.equals(13.2, tom.velocidadMaxima())
+    assert.equals(82, tom.energia())
+    }
+    
+    test "comerANibbles" {
+    tom.comerA(nibbles)
+    assert.equals(18.7, tom.velocidadMaxima())
+    assert.equals(137, tom.energia())
+    }
+    
+    test "jerryCumpleAños" {
+    jerry.cumplirAños()
+    tom.comerA(jerry)
+    assert.equals(25.9, tom.velocidadMaxima())
+    assert.equals(209, tom.energia())
+    }
+    
+    test "correr38metros" {
+    tom.correr(38)
+    assert.equals(24, tom.velocidadMaxima())
+    assert.equals(190, tom.energia())
+    }
+ 
+    test "puedeCazarAJerry" {
+    (tom.cazarA_A_metros(jerry, 40))
+    assert.equals(tom.energia() + 52, tom.energia())
+    }
 }

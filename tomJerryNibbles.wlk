@@ -17,9 +17,7 @@ object tom {
   }
 
   method cazarA_A_metros(raton, metros) {
-    var energiaGastada = (metros / 2)
-
-    if(energiaGastada < self.energia()){
+    if((metros / 2) < self.energia()){
       self.comerA(raton)
     }
   }
@@ -43,8 +41,15 @@ object nibbles {
 } 
 
 object larry {
-  method peso() = 28
-  method edad() = 5
+  var peso = edad * 5
+  method peso() = peso
+
+  var edad = 5
+  method edad() = edad
+  method cumplirAños() {
+    edad = edad + 1
+    peso = edad * 5
+  }
 } 
 
 // Inventar otro ratón
