@@ -7,7 +7,7 @@ object tom {
   method energia() = energia
   
   method correr(metros) {
-    energia = metros - metros / 2
+    energia = energia - (metros / 2)
     velocidadMaxima = 5 + (energia / 10)
   }
   
@@ -16,6 +16,13 @@ object tom {
     velocidadMaxima = 5 + (energia / 10)
   }
 
+  method cazarA_A_metros(raton, metros) {
+    var energiaGastada = (metros / 2)
+
+    if(energiaGastada < self.energia()){
+      self.comerA(raton)
+    }
+  }
 
 }
 
@@ -33,6 +40,11 @@ object jerry {
 
 object nibbles {
   method peso() = 35
+} 
+
+object larry {
+  method peso() = 28
+  method edad() = 5
 } 
 
 // Inventar otro ratón
