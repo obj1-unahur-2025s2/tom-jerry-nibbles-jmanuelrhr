@@ -10,18 +10,18 @@ object tom {
     return (metros / 2)
   }
 
-  method aumentoDeEnergiaPorComer(raton){
-    return (12 + raton.peso())
+  method calculoDeVelMaxima(energiaActual) {
+    return (5 + (energiaActual / 10))
   }
   
   method correr(metros) {
     energia = energia - self.energiaUsadaParaCorrer(metros)
-    velocidadMaxima = 5 + (energia / 10)
+    velocidadMaxima = self.calculoDeVelMaxima(energia)
   }
   
   method comerA(raton) {
-    energia = energia + self.aumentoDeEnergiaPorComer(raton)
-    velocidadMaxima = 5 + (energia / 10)
+    energia = energia + 12 + raton.peso()
+    velocidadMaxima = self.calculoDeVelMaxima(energia)
   }
 
   method cazarA_A_(raton, metros) {
